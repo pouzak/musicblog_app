@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+.title-text{
+    font-size: 3.3rem;
+    padding-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+.title-text-success{
+    font-size: 3.3rem;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+}
+.cont-title{
+    padding-bottom: 30px;
+}
+.formbutt{
+    width:10rem;
+   }
+.ql-video {
+   
+    width: 700px;
+   height: 400px;
+}
+.ql-editor{
+    font-size: 1.1rem;
+}
+@media screen and (max-width: 1200px) {
+    
+    .ql-video {
+   
+        width: 100%;
+       height: 400px;
+    }
+      
+  }
+
+@media screen and (max-width: 769px) {
+   .title-text{
+       font-size: 1.3rem;
+       padding-bottom: 10px;
+   }
+   .formbutt{
+    width: 96%;
+   }
+   .ql-video {
+   
+    width: auto;
+   height: 200px;
+}
+    .mobile-container{
+        padding-top: 50px;
+    }
+    .ql-editor{
+        font-size: 1.2rem;
+    }
+}

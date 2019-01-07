@@ -1,0 +1,79 @@
+
+
+.listbutt {
+    overflow: hidden;
+    
+}
+
+.image {
+    padding: 0;
+    
+}
+.cardtext{
+    height: 3rem;
+    
+}
+.image img {
+    width: 32rem;
+    height: 300px;
+    object-fit: cover;
+}
+.mainbody{
+    padding: 10px;
+}
+
+.cardcss {
+
+  width: 32rem;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+    .cardcss {
+        width: 700px;
+        margin-bottom: 5px;
+        margin-bottom: 15px;
+        padding: 0;
+      }
+      .image img {
+         
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+    .mainbody{
+        padding: 10px;
+        width: 100%;
+        display: flex;
+  align-items: center;
+  justify-content: center;
+    }
+    
+      
+  }
+@media screen and (max-width: 769px) {
+    .cardcss {
+        width: 100%;
+        margin-bottom: 5px;
+        margin-bottom: 15px;
+        padding: 0;
+      }
+ 
+      .image img {
+         
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    .mainbody{
+        padding: 10px;
+        width: 100%;
+    }
+    .listbutt{
+        width: 96%;
+    }
+    .cardtext{
+        height: 4rem;
+    }
+  }
+ 

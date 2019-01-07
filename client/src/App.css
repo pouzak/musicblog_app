@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+.oxygen{
+  font-family: 'Oxygen', sans-serif;
+}
+
+
+
+.box {
+  border: 2px solid red;
+  width: 20%;
+}
+
+.ok {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  border-radius: 10px;
+  
+}
+
+.lol {
+  border: 2px solid red;
+  margin-top: 50%;
+  position: absolute
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.maincontent {
+  position: fixed;
+  border: 2px solid red;
+}
+
