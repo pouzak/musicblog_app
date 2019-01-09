@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
-import 'react-quill/dist/quill.snow.css';
 import { Animation, Container, MDBBtn } from 'mdbreact';
 import UserForm from './AddPost/UserForm';
 
 class Add extends Component {
-  state = {
-    content: null,
-    
-  }
-    change= (alert,txt) => {
+  
+    change = (alert,txt) => {
         this.props.alert(alert,txt);
         this.props.history.push('/');
         
       } 
-      updateContent(newContent) {
-        this.setState({
-            content: newContent
-        })
-    }
+   
 
   render() {
     return (

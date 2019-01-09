@@ -22,17 +22,16 @@ import axios from 'axios';
   
   getInfo(){
     const itemList = this.state.itemsList;
-    const res = itemList.filter(item => item.title.toLowerCase().includes(this.state.query.toLowerCase()) || item.tags.toLowerCase().includes(this.state.query));
+    const res = itemList.filter(item => item.title.toLowerCase().includes(this.state.query) || item.tags.toLowerCase().includes(this.state.query));
     this.setState({
       filteredList: res
     })
-    //console.log(this.props.list)
   }
 
 
   handleInputChange = () => {
     this.setState({
-      query: this.search.value
+      query: this.search.value.toLowerCase()
     }, () => {
       if (this.state.query && this.state.query.length > 1) {
         if (this.state.query.length % 2 === 0) {
@@ -75,7 +74,7 @@ import axios from 'axios';
       </Col>
       </Container>
       </div>
-          <MDBRow> 
+          <MDBRow className="d-flex justify-content-center center"> 
               <List items={this.state.filteredList}/>
             </MDBRow>
         </MDBContainer>

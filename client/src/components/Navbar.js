@@ -38,7 +38,7 @@ class Nav extends Component {
             <h1 className="title">Story Book</h1>
             <h3 className="title2">Share your daily stories.</h3>
             <div className="d-flex justify-content-center addcontainer">
-            <Link className="addbutton bouncy" to={"/addstory"}>
+            <Link className="addbutton glow" to={"/addstory"}>
               Add story
               </Link>
               

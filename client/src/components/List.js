@@ -2,6 +2,7 @@ import React from 'react';
 import {Animation, MDBContainer, Button, Card, CardBody, CardTitle, CardText, MDBIcon} from "mdbreact";
 import './List.css';
 import {Link} from 'react-router-dom';
+import Parser from 'html-react-parser';
 
 
 const List = ({ items}) => {
@@ -23,7 +24,7 @@ const List = ({ items}) => {
                         <CardTitle>{item.title}</CardTitle>
                     
                         <CardText className="cardtext" >
-                        {(item.content.length > 200 ? item.content.slice(0, 140).replace(/<\/?[^>]+(>|$)/g, "")+ "...": item.content.replace(/<\/?[^>]+(>|$)/g, ""))}
+                        {(item.content.length > 200 ? Parser(item.content.slice(0, 140).replace(/<\/?[^>]+(>|$)/g, ""))+ "...": Parser(item.content.replace(/<\/?[^>]+(>|$)/g, "")))}
                         </CardText>
                         <Link to={`/stories/${item._id}` }>
                         <Button className="listbutt">Read More</Button>

@@ -45,19 +45,15 @@
     color: white;
     font-size: 3.5rem;
 }
-.bouncy{
-    animation:bouncy 10s infinite linear;
-    position:relative;
+@keyframes glowing {
+    0% { box-shadow: 0 0 -10px #f8f8f8; }
+    40% { box-shadow: 0 0 20px #ffffff; }
+    60% { box-shadow: 0 0 20px #ffffff; }
+    100% { box-shadow: 0 0 -10px #ffffff; }
     }
-@keyframes bouncy {
-    0%{top:0em}
-    40%{top:0em}
-    43%{top:-0.9em}
-    45%{top:0em}
-    46%{top:-0.4em}
-    47%{top:0em}
-    100%{top:0em;}
-}
+.glow {
+        animation: glowing 5000ms infinite;
+      }
 
 .search {
     color: white;

@@ -77,7 +77,7 @@ postdata = () => {
           </MDBJumbotron>
     
           ) : (<MDBJumbotron>
-            <h2 className="h1 display-3 oxygen">Loading...</h2>
+            <h2 className="oxygen">Loading...</h2>
             <div className="lead d-flex justify-content-center">
             <div className="loader"></div>
             </div>
