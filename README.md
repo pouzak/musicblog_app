@@ -5,7 +5,7 @@
 Blog/social network style web app prototype. Made only for some educational purposes. </br>
 </br>
 </br>
-![alt text](https://github.com/pouzak/storyapp/blob/master/story.jpg)
+![alt text](https://github.com/pouzak/storybookapp/blob/master/story.jpg)
 </br>
 </br>
 ### Features
