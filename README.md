@@ -1,11 +1,11 @@
-# Story Book app
+# Music Blog app
 
 
 
 Blog/social network style web app prototype. Made only for some educational purposes. </br>
 </br>
 </br>
-![alt text](https://github.com/pouzak/storybookapp/blob/master/story.jpg)
+![alt text](https://github.com/pouzak/musicblog_app/blob/master/screen.jpg)
 </br>
 </br>
 ### Features
