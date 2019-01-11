@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBBtn,MDBBtnGroup } from 'mdbreact';
+import { Button ,MDBBtnGroup } from 'mdbreact';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -26,30 +26,30 @@ class ContentDetails extends Component {
           ['bold', 'italic', 'underline', 'strike', 'blockquote'],
           [{'list': 'ordered'}, {'list': 'bullet'}, 
            {'indent': '-1'}, {'indent': '+1'}],
-          ['link', 'video'],
+          ['link','video'],
           ['clean']
         ]
       }
     return (
         <React.Fragment>
             <div className="editor-cont">
-                <h1 className="title-text cont-title">Step 2: Enter your Story content</h1>
-              
+                <h1 className="title-text cont-title">Step 2: Enter your content</h1>
+              <div className="ql-main">
                 <ReactQuill  
                 value={values.content}
                     onChange={editorChange}
-                    placeholder={"Enter your story here"}
-                    modules={ContentDetails.modules} >
+                    placeholder={"Type something awesome here..."}
+                    modules={ContentDetails.modules}>
                     
                 </ReactQuill>
-           
+           </div>
                 <br/>
 
                 <div className="d-flex justify-content-center mobile-container">
                     <MDBBtnGroup className="oxygen">
-                    {values.content.length > 0 ? ( <MDBBtn color="light-green" onClick={this.continue}>Continue</MDBBtn>) : (null)}
+                    {values.content.length > 0 ? ( <Button className="continue-button" color="" onClick={this.continue}>Continue</Button>) : (null)}
             
-                    <MDBBtn color="light-blue" onClick={this.back}>back</MDBBtn>
+                    <Button color="" className="back-button"onClick={this.back}>back</Button>
                     </MDBBtnGroup>
                     </div>
                 </div>

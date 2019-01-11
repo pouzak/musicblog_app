@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {MDBBtn,MDBBtnGroup  } from 'mdbreact';
+import {Button,MDBBtnGroup  } from 'mdbreact';
 import ImageUploader from 'react-images-upload';
 
 
@@ -45,8 +45,8 @@ onDrop(picture) {
             />
              <div className="d-flex justify-content-center">
            <MDBBtnGroup className="oxygen">
-           {values.image.length > 0 ? ( <MDBBtn color="light-green" onClick={this.continue}>Continue</MDBBtn>) : (null)}
-              <MDBBtn color="light-blue" onClick={this.back}>back</MDBBtn>
+           {values.image.length > 0 ? (<Button className="continue-button" color="" onClick={this.continue}>Continue</Button>) : (null)}
+           <Button color="" className="back-button"onClick={this.back}>back</Button>
             </MDBBtnGroup>
             </div>
       </div>

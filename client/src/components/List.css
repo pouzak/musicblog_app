@@ -1,18 +1,11 @@
 
-
-.listbutt {
-    overflow: hidden;
-    
-}
-.mainlist{}
-
 .image {
     padding: 0;
     
 }
 .cardtext{
-    height: 3rem;
-    
+    height: 4rem;
+   
 }
 .image img {
     width: 32rem;
@@ -21,17 +14,26 @@
 }
 .mainbody{
     padding: 10px;
+    transition: all 0.2s;
 }
-
+.mainbody:hover{
+    transform: scale(1.01) 
+}
 .cardcss {
 
   width: 32rem;
-  margin-bottom: 20px;
+  
+}
+.date-main{
+    font-style: italic;
+    font-size:0.85rem;
+    opacity: 0.8;
+    font-weight: 0;
 }
 
 @media screen and (max-width: 1200px) {
     .cardcss {
-        width: 700px;
+        width: 750px;
         margin-bottom: 5px;
         margin-bottom: 15px;
         padding: 0;
@@ -48,6 +50,10 @@
         display: flex;
   align-items: center;
   justify-content: center;
+
+    }
+    .mainbody:hover{
+        transform: scale(1) 
     }
     
       
@@ -70,11 +76,9 @@
         padding: 10px;
         width: 100%;
     }
-    .listbutt{
-        width: 96%;
-    }
+
     .cardtext{
-        height: 4rem;
+        height: 5rem;
     }
   }
  

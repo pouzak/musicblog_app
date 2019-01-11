@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import List from './List';
 import {MDBContainer,MDBRow, FormInline, Col, Container, Fa } from "mdbreact";
 import axios from 'axios';
+import Spinner from './Spinner';
 
 
-
- class Dash extends Component {
+ class Dashboard extends Component {
   state = {
     itemsList: null,
     query: '',
@@ -21,6 +21,7 @@ import axios from 'axios';
   }
   
   getInfo(){
+    
     const itemList = this.state.itemsList;
     const res = itemList.filter(item => item.title.toLowerCase().includes(this.state.query) || item.tags.toLowerCase().includes(this.state.query));
     this.setState({
@@ -50,7 +51,7 @@ import axios from 'axios';
       return <div style={{position: "absolute", left: "0", 
       right: "0", 
       marginLeft: "auto",
-      marginRight: "auto", width: "100px"}} className="loader"></div>
+      marginRight: "auto", width: "100px"}}> <Spinner /></div>
       //return <div style={{left: "47%",position: "absolute",top: "50%",}} className="loader"></div>
       } else {
     }
@@ -61,9 +62,10 @@ import axios from 'axios';
           <Container className="d-flex justify-content-center">
           <Col md="5">
         <FormInline className="md-form">
-          <Fa icon="search" />
+          <Fa icon="search" style={{color: "white"}}/>
           <input
-            className="form-control form-control-lg ml-3 w-75 search"
+            style={{color: "white"}}
+            className="active-white active-white form-control form-control-lg ml-3 w-75 search"
             type="text"
             placeholder="Search..."
             aria-label="Search"
@@ -83,4 +85,4 @@ import axios from 'axios';
   }
 }
 
-export default Dash;
+export default Dashboard;

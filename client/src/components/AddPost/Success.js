@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import axios from 'axios';
-import {MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import {MDBBtn, MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import {withAlert} from '../../context';
+import { compose } from 'recompose';
+import Spinner from '../Spinner'
 
 //https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data
 
@@ -14,9 +17,11 @@ export class Success extends Component {
 
 
 change = () => {
-  this.props.alert('success',`Post "${this.props.values.title}" Created!`);
-  this.props.history.push('/');
+  this.props.context.changeAlert('success',`Post "${this.props.values.title}" Created!`);
+  //this.props.alert('success',`Post "${this.props.values.title}" Created!`);
   this.setState({loading: null})
+  this.props.history.push('/');
+  
   
 } 
 
@@ -60,8 +65,9 @@ postdata = () => {
       <MDBContainer className="mt-5 text-center">
       <MDBRow>
         <MDBCol>
+        <div className="success-main">
           {!this.state.loading ? (
-            <MDBJumbotron>
+           <React.Fragment>
             <h2 className="title-text-success">That's it, {name}!</h2>
             <p className="lead">
               Your post "{title}" is ready to be published on page!
@@ -74,16 +80,18 @@ postdata = () => {
             <MDBBtn size="lg" color="success" className="formbutt oxygen" onClick={this.postdata}>Post!</MDBBtn>
             
             </p>
-          </MDBJumbotron>
+         </React.Fragment>
     
-          ) : (<MDBJumbotron>
+          ) : (
+            <React.Fragment>
             <h2 className="oxygen">Loading...</h2>
             <div className="lead d-flex justify-content-center">
-            <div className="loader"></div>
+            <div><Spinner /></div>
             </div>
             <hr className="my-2" />
-
-          </MDBJumbotron>)}  
+            </React.Fragment>
+          )} 
+          </div> 
         </MDBCol>
       </MDBRow>
     </MDBContainer>
@@ -92,4 +100,4 @@ postdata = () => {
   }
 }
 
-export default withRouter(Success)
+export default compose(withRouter, withAlert)(Success)

@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Thasadith');
 .title-text{
     font-size: 3.3rem;
     padding-bottom: 10px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
+    font-family: 'Thasadith', sans-serif;
+    color: white;
+    
+}
+.user-input{
+    color: white;
+}
+.ql-main{
+    padding: 10px;
+    background: white;
+    border-radius: 15px;
 }
 .title-text-success{
     font-size: 3.3rem;
@@ -24,7 +34,18 @@
 }
 .ql-editor{
     font-size: 1.1rem;
+
 }
+.success-main{
+    color: white;
+}
+.continue-button{
+    background-color: #4f966a
+}
+.back-button {
+    background-color: #4f6096
+}
+
 @media screen and (max-width: 1200px) {
     
     .ql-video {

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Animation, Container, MDBBtn } from 'mdbreact';
+import { Animation, Container, Button } from 'mdbreact';
 import UserForm from './AddPost/UserForm';
+import {withAlert} from '../context';
 
 class Add extends Component {
   
-    change = (alert,txt) => {
-        this.props.alert(alert,txt);
+    change = () => {
+        this.props.context.changeAlert('danger','Process canceled!');
         this.props.history.push('/');
-        
       } 
    
 
@@ -16,9 +16,9 @@ class Add extends Component {
       <div style={{paddingTop: '2rem',}}>
       <Container>
         <Animation type="fadeIn" duration="500ms">
-          <UserForm alert={this.props.alert}/>
+          <UserForm />
           <div className="d-flex justify-content-center">
-            <MDBBtn className="oxygen" color="red" onClick={() => this.change('danger','Process canceled!')}>cancel</MDBBtn>
+            <Button style={{backgroundColor: "#9b2f2f"}} className="oxygen" color="#9b2f2f" onClick={() => this.change()}>cancel</Button>
           </div>
         </Animation>
       </Container>  
@@ -26,5 +26,5 @@ class Add extends Component {
     )
   }
 }
-export default Add;
+export default withAlert(Add);
 

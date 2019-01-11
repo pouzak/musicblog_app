@@ -3,54 +3,34 @@
 import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter,  Route,  Switch} from 'react-router-dom';
-import Dash from './components/Dash';
+import Dashboard from './components/Dashboard';
 import Nav from './components/Navbar';
-import Story from './components/Story';
+import Post from './components/Post';
 import AddStory from './components/Add';
+import { Provider } from './context';
+
 
 
 
  class App extends Component {
-   state = {
-     alert: {
-       type: null,
-       text: null
-     }
-   }
 
-
-componentDidUpdate () {
-  if(this.state.alert)
-  setTimeout(() => {
-    this.setState({ alert: null});
-  }, 3000);
-}
-
-
-
-changeAlert = (alert, txt) => {
-  
-  this.setState({
-    alert: {
-      type: alert,
-      text: txt
-    } 
-  })
-}
+//props through router
+//<Route path="/stories/:id" render={(props) => <Story {...props} alert={this.changeAlert}/>} /> 
   render() {
     
     return (
-      <BrowserRouter>
-        <div>
-        <Nav alert={this.state.alert}/>
-        <Switch>
-          <Route exact path="/" component={Dash}/>
-          <Route path="/stories/:id" render={(props) => <Story {...props} alert={this.changeAlert}/>} />
-          <Route path="/addstory" render={(props) => <AddStory {...props} alert={this.changeAlert}/>} />
-        </Switch>
-      </div>
-      </BrowserRouter>
-      
+      <Provider>
+        <BrowserRouter>
+          <div>
+            <Nav />
+            <Switch>
+              <Route exact path="/" component={Dashboard}/>
+              <Route path="/stories/:id" component ={Post} />
+              <Route path="/addstory" component ={AddStory}/>
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </Provider>
     )
   }
   
